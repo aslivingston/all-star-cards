@@ -10,8 +10,6 @@ $cardModel = new CardModel($db);
 
 $cardViewHandler = new cardViewHandler();
 
-$myCards = $cardModel->getAllCards();
-
 // Check if the form is submitted
 if (isset($_POST['delete'])) {
     // Get the card ID from the form
@@ -38,6 +36,8 @@ if (isset($_POST['filter'])) {
     $filteredCards = $cardModel->getAllCards();
 }
 
+$myCards = $cardModel->getAllCards();
+
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ if (isset($_POST['filter'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="stylesheet.css"/>
     <title>All Star Cards</title>
 </head>
 <body>
