@@ -1,0 +1,114 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #383838;
+    margin: 0;
+}
+
+nav {
+    background-color: #383838;
+    color: #ecf0f1;
+    position: fixed;
+    width: 100%;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+h1 {
+    color: #000;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.intro {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 150px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: #3154fa;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    width: 400px;
+    max-width: 100%;
+    padding: 30px;
+    border-radius: 40px;
+}
+
+.card img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.card-details {
+    padding: 20px;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.cardName {
+    font-size: 1rem;
+}
+
+.deleteButton {
+    background-color: #3154fa;
+    color: #fff;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+}
+
+.editButton {
+    background-color: #3154fa;
+    color: #fff;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+}
