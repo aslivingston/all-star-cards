@@ -2,12 +2,15 @@
 
 require_once 'src/connectToDb.php';
 require_once 'src/Models/CardModel.php';
+require_once 'src/cardViewHandler.php';
 
 $db = connectToDb();
 
 $cardModel = new CardModel($db);
 
-//$myCards = $cardModel->getAllCards();
+$cardViewHandler = new cardViewHandler();
+
+$myCards = $cardModel->getAllCards();
 
 // Check if the form is submitted
 if (isset($_POST['delete'])) {
@@ -78,36 +81,7 @@ if (isset($_POST['filter'])) {
 </form>
 
     <div class="card-container">
-        <?php
-        foreach ($filteredCards as $card) {
-//            echo '<pre>';
-//            var_dump($card);
-            echo '<div class="card">';
-            echo '<img src="' . $card['img_link'] . '" alt="' . $card['first_name'] . ' ' . $card['last_name'] . '">';
-            echo '<div class="card-details">';
-            echo '<div>';
-            echo "<p class='cardName'>" . $card['first_name'] . ' ' . $card['last_name'] . "</p>";
-            echo '</div>';
-            echo '<div>';
-            echo '</div>';
-//            echo "<p>" . $card['release_year'] . "</p>";
-            echo '<div>';
-            echo "<p class='cardSport'>" . $card['sport'] . "</p>";
-            echo "<p class='cardBrand'>" . $card['brand'] . "</p>";
-            echo '</div>';
-            echo "<p class='cardValue'>$" . $card['value'] . "</p>";
-            echo '</div>';
-            echo '<form  method="post">';
-            echo '<input type="hidden" name=id value="' . $card['id'] . '">';
-            echo '<input class="deleteButton" type="submit" name="delete" value="Remove Card">';
-            echo '</form>';
-            echo '<form method="get" action="editCard.php">';
-            echo '<input type="hidden" name="id" value="' . $card['id'] . '">';
-            echo '<input class="editButton" type="submit" name="edit" value="Edit Card Details">';
-            echo '</form>';
-            echo '</div>';
-        }
-        ?>
+        <?php echo $cardViewHandler->displayAllCards($myCards) ?>
 
     </div>
 
