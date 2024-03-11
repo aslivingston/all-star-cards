@@ -82,7 +82,6 @@ if (isset($_POST['filter'])) {
 
     <div class="card-container">
         <?php echo $cardViewHandler->displayAllCards($myCards) ?>
-
     </div>
 
 </body>

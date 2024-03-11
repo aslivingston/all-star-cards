@@ -35,7 +35,7 @@ class CardModel
     }
 
     private function hydrateSingleCard(array $data): Card {
-        return new Card ($data['id'], $data['first_name'], $data['last_name'], $data['release_year'], $data['brand'], $data['sport'], $data['value'], $data['img_link'], $data['deleted']);
+        return new Card ($data['id'], $data['first_name'], $data['last_name'], $data['release_year'], $data['brand'], $data['sport'], $data['value'], $data['img_link'], $data['deleted'], $data['logo_link']);
     }
 
     public function registerCard($first_name, $last_name, $release_year = null, $brand = null, $sport = null, $value = null, $img_link = null) {

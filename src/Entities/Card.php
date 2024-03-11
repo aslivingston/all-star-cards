@@ -19,7 +19,9 @@ readonly class Card {
 
     public int $deleted;
 
-    public function __construct(int $id, string $first_name, string $last_name, int $release_year, string $brand, string $sport, float $value, string $img_link, int $deleted)
+    public string $logo;
+
+    public function __construct(int $id, string $first_name, string $last_name, int $release_year, string $brand, string $sport, float $value, string $img_link, int $deleted, string $logo)
     {
         $this->id = $id;
         $this->first_name = $first_name;
@@ -30,6 +32,7 @@ readonly class Card {
         $this->value = $value;
         $this->img_link = $img_link;
         $this->deleted = $deleted;
+        $this->logo = $logo;
     }
 
     public function getId(): int
