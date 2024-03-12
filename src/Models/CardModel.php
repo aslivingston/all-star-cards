@@ -71,7 +71,7 @@ class CardModel
         ]);
     }
 
-    public function getAllSports()
+    public function getAllSports(): false|array
     {
         $query = $this->db->prepare('SELECT DISTINCT `sport` FROM `cards`;');
         $query->execute();
@@ -80,7 +80,7 @@ class CardModel
         return $sports;
     }
 
-    function getCardsBySport(string $sport)
+    function getCardsBySport(string $sport): false|array
     {
         $query = $this->db->prepare( 'SELECT * FROM `cards` WHERE `sport` = :sport;');
         $query->execute([

@@ -10,6 +10,7 @@ $cardModel = new CardModel($db);
 
 $cardViewHandler = new cardViewHandler();
 
+//$myCards = $cardModel->getAllCards();
 // Check if the form is submitted
 if (isset($_POST['delete'])) {
     // Get the card ID from the form
@@ -22,21 +23,23 @@ if (isset($_POST['delete'])) {
 
 $sports = $cardModel->getAllSports(); // You need to implement this function
 
+$filteredCards = $cardModel->getAllCards();
 
-// Check if the form is submitted
-if (isset($_POST['filter'])) {
-    if ($selectedSport = $_POST['sport']) {
-        $filteredCards = $cardModel->getCardsBySport($selectedSport);
-    } else {
+if (isset($_POST['filter']) && isset($_POST['sport'])) {
+    $selectedSport = $_POST['sport'];
+    // Check if "All" is selected
+    if ($selectedSport === "") {
+        // If "All" is selected, get all cards
         $filteredCards = $cardModel->getAllCards();
+    } else {
+        // Otherwise, filter cards by the selected sport
+        $filteredCards = $cardModel->getCardsBySport($selectedSport);
     }
-    // Call a function to get cards filtered by the selected sport
 } else {
     // If the form is not submitted, get all cards
     $filteredCards = $cardModel->getAllCards();
 }
 
-$myCards = $cardModel->getAllCards();
 
 ?>
 
@@ -61,8 +64,6 @@ $myCards = $cardModel->getAllCards();
     </div>
 </nav>
 
-
-
 <h1 id="current-collection">Your Card Collection</h1>
 
 <form method="post">
@@ -81,7 +82,7 @@ $myCards = $cardModel->getAllCards();
 </form>
 
     <div class="card-container">
-        <?php echo $cardViewHandler->displayAllCards($myCards) ?>
+        <?php echo $cardViewHandler->displayAllCards($filteredCards) ?>
     </div>
 
 </body>
