@@ -136,3 +136,8 @@ p.cardValue {
     border-radius: 20px;
     width: 140px;
 }
+
+.deleteButton:hover {
+    background-color: #fff;
+    color: #3154fa;
+}
