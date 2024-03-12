@@ -9,6 +9,7 @@ nav {
     color: #ecf0f1;
     position: fixed;
     width: 100%;
+    /*font-family: ;*/
 }
 
 .nav-container {
@@ -25,6 +26,7 @@ nav {
     font-weight: bold;
     color: #ecf0f1;
     text-decoration: none;
+    font-family: "Bungee", sans-serif;
 }
 
 .nav-links {
@@ -37,6 +39,8 @@ nav {
     text-decoration: none;
     padding: 0.5rem;
     transition: color 0.3s;
+    font-family: Avenir, sans-serif;
+    font-size: 0.8rem;
 }
 
 .nav-links a:hover {
@@ -44,18 +48,44 @@ nav {
 }
 
 h1 {
-    color: #000;
+    color: #fff;
     max-width: 1500px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center;
+    font-family: "Bungee", sans-serif;
 }
 
-.intro {
-    max-width: 1200px;
+.heading {
+    font-size: 3rem;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 150px;
+    padding-left: 100px;
+    padding-top: 200px;
 }
+
+.filterForm {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding-left: 100px;
+}
+
+.filterSelect {
+    background-color: #383838;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    width: 150px;
+}
+
+.filterButton {
+    background-color: #383838;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+
 
 .card-container {
     display: flex;
@@ -91,8 +121,9 @@ h1 {
 }
 
 .cardName {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     margin: 0;
+    font-family: "Bungee", sans-serif;
 }
 
 .card-grid {
@@ -122,6 +153,25 @@ p.cardValue {
     object-fit: contain;
 }
 
+.sport-logo-nfl {
+    width: 50px;
+    max-height: 50px;
+    object-fit: contain;
+}
+
+.sport-logo-nba {
+    width: 55px;
+    max-height: 55px;
+    object-fit: contain;
+}
+
+.sport-logo-mlb {
+    width: 55px;
+    max-height: 55px;
+    object-fit: contain;
+}
+
+
 .button-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -129,7 +179,6 @@ p.cardValue {
 }
 
 .deleteButton, .editButton {
-    background-color: #3154fa;
     color: #fff;
     padding: 10px;
     border: 1px solid #fff;
@@ -138,6 +187,15 @@ p.cardValue {
 }
 
 .deleteButton:hover {
-    background-color: #fff;
-    color: #3154fa;
+    color: #383838;
+    border: 1px solid #383838;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.editButton:hover {
+    color: #383838;
+    border: 1px solid #383838;
+    transition: all 0.3s;
+    cursor: pointer;
 }

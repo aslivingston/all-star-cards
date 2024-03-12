@@ -48,7 +48,10 @@ if (isset($_POST['filter']) && isset($_POST['sport'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css"/>
+    <link rel="stylesheet" href="indexstylesheet.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
     <title>All Star Cards</title>
 </head>
 <body>
@@ -56,19 +59,23 @@ if (isset($_POST['filter']) && isset($_POST['sport'])) {
     <div class="nav-container">
         <a href="#" class="logo">All Star Cards</a>
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#current-collection">Your Card Collection</a>
-            <a href="addCard.php">Add To Your Collection</a>
-            <a href="intro.php">About Us</a>
+            <a href="#home">HOME</a>
+            <a href="#current-collection">YOUR COLLECTION</a>
+            <a href="addCard.php">ADD TO COLLECTION</a>
+        </div>
+        <div>
+            <img class="sport-logo-nfl" src="https://cdn.freebiesupply.com/logos/large/2x/nfl-1-logo-black-and-white.png">
+            <img class="sport-logo-nba" src="https://images.purevpn-tools.com/public/images/NBA-right-Image.png">
+            <img class="sport-logo-mlb" src="https://weareninetytwo.com/wp-content/uploads/2023/01/major-league-baseball-our-work-ninety-two.png">
         </div>
     </div>
 </nav>
 
-<h1 id="current-collection">Your Card Collection</h1>
+<h1 class="heading" id="current-collection">Your Card Collection</h1>
 
-<form method="post">
-    <label for="sport">Filter by Sport:</label>
-    <select name="sport" id="sport">
+<form class="filterForm" method="post">
+    <label for="sport"></label>
+    <select class="filterSelect" name="sport" id="sport">
         <option value="" selected>Select Sport</option>
         <option value="">All</option>
         <?php
@@ -78,7 +85,7 @@ if (isset($_POST['filter']) && isset($_POST['sport'])) {
         }
         ?>
     </select>
-    <input type="submit" name="filter" value="Filter">
+    <input class="filterButton" type="submit" name="filter" value="Filter">
 </form>
 
     <div class="card-container">

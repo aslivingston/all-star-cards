@@ -11,113 +11,13 @@ $cardModel = new CardModel($db);
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <title>Submit a Card</title>
+    <title>All Star Cards</title>
     <link rel="icon" type="image/x-icon" href="images/favIconFinal.png">
-    <style>
-        body{
-            background-color: #F0ECE3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0;
-        }
+    <link rel="stylesheet" href="add.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 
-        nav {
-            background-color: #000;
-            color: #ecf0f1;
-            position: fixed;
-            width: 100%;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #ecf0f1;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .nav-links a {
-            color: #ecf0f1;
-            text-decoration: none;
-            padding: 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #3498db;
-        }
-
-        .submit {
-            padding: 100px;
-        }
-
-        .submitTitle{
-            font-size: xxx-large;
-            text-align: center;
-        }
-
-        .addForm2{
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            font-size: xx-large;
-            width: 500px;
-            box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.32);
-            background-color: white;
-            padding-top: 0.5rem;
-            padding-right: 3rem;
-            padding-left: 3rem;
-            padding-bottom: 2rem;
-            margin-top: -1rem;
-            color: #79705D;
-        }
-
-
-        button{
-
-        }
-
-        button:hover {
-
-        }
-
-        @media only screen and (max-width: 1000px) {
-            .submitTitle {
-
-            }
-
-            .addForm2{
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                font-size: x-large;
-                width: fit-content;
-                box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.32);
-                background-color: white;
-                padding-top: 0.5rem;
-                padding-right: 3rem;
-                padding-left: 3rem;
-                padding-bottom: 2rem;
-                margin-top: 1rem;
-                color: #79705D;
-            }
-
-        }
-    </style>
 </head>
 
 <body>
@@ -126,40 +26,45 @@ $cardModel = new CardModel($db);
     <div class="nav-container">
         <a href="#" class="logo">All Star Cards</a>
         <div class="nav-links">
-            <a href="index.php">Home</a>
-            <a href="index.php">Your Card Collection</a>
-            <a href="addCard.php">Add To Your Collection</a>
+            <a href="index.php">HOME</a>
+            <a href="index.php">YOUR COLLECTION</a>
+            <a href="addCard.php">ADD TO COLLECTION</a>
+        </div>
+        <div>
+            <img class="sport-logo-nfl" src="https://cdn.freebiesupply.com/logos/large/2x/nfl-1-logo-black-and-white.png">
+            <img class="sport-logo-nba" src="https://images.purevpn-tools.com/public/images/NBA-right-Image.png">
+            <img class="sport-logo-mlb" src="https://weareninetytwo.com/wp-content/uploads/2023/01/major-league-baseball-our-work-ninety-two.png">
         </div>
     </div>
 </nav>
 
 <div class="submit">
-    <p class="submitTitle">Add to your Card Vault</p>
+    <h2 class="addTitle">Add to your Card Vault</h2>
 
-    <form class="addForm2" method="post">
+    <form class="addForm" method="post">
         <label for="first_name">First Name</label>
-        <input class="addInput" type="text" id="first_name" name="first_name" placeholder="First Name">
+        <input class="addInput" type="text" id="first_name" name="first_name">
 
         <label for="last_name">Last Name</label>
-        <input class="addInput" type="text" id="last_name" name="last_name" placeholder="Last Name">
+        <input class="addInput" type="text" id="last_name" name="last_name">
 
         <label for="release_year">Release Year</label>
         <input class="addInput" type="text" id="release_year" name="release_year">
 
         <label for="brand">Card Brand</label>
-        <input class="addInput" type="text" id="brand" name="brand" placeholder="Card Brand">
+        <input class="addInput" type="text" id="brand" name="brand">
 
         <label for="sport">Sport</label>
-        <input class="addInput" type="text" id="sport" name="sport" placeholder="Sport">
+        <input class="addInput" type="text" id="sport" name="sport">
 
         <label for="Value">Value</label>
-        <input class="addInput" type="number" id="value" name="value" placeholder="value">
+        <input class="addInput" type="number" id="value" name="value">
 
-        <label for="image">Image</label>
-        <input class="addInput" type="text" id="image" name="img_link" placeholder="Image URL...">
+        <label for="image">Image URL</label>
+        <input class="addInput" type="text" id="image" name="img_link">
 
         <div class="buttonPosition">
-            <input type="submit" name="submit" value="Submit New Card!">
+            <input class="submitButton" type="submit" name="submit" value="Submit New Card!">
         </div>
     </form>
 
@@ -197,26 +102,6 @@ if (isset($_POST['submit'])) {
     $cardModel->registerCard($first_name, $last_name, $release_year, $brand, $sport, $value, $img_link);
     $message = true;
 
-//    if (!isset($_POST["brand"]) || $_POST["brand"] == "") {
-//        $message = false;
-//        echo 'You need to include a brand';
-//        echo '<br>';
-//    }
-//    if (!isset($_POST["sport"]) || $_POST["sport"] == "") {
-//        $message = false;
-//        echo 'You need to include a sport category';
-//        echo '<br>';
-//    }
-//    if (!isset($_POST["value"]) || $_POST["value"] == 0) {
-//        $message = false;
-//        echo 'You need to include a value';
-//        echo '<br>';
-//    }
-//    if (!isset($_POST["img_link"]) || $_POST["img_link"] == "") {
-//        $message = false;
-//        echo 'You need to include an image link';
-//        echo '<br>';
-//    }
 
     if($message === false)
     {
@@ -230,7 +115,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<p>&#169 2024 Alex Livingston</p>
+<footer>&#169 2024 Alex Livingston</footer>
 </body>
 
 
