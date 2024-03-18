@@ -13,7 +13,7 @@ $cardModel = new CardModel($db);
 <head>
     <title>All Star Cards</title>
     <link rel="icon" type="image/x-icon" href="images/favIconFinal.png">
-    <link rel="stylesheet" href="add.css"/>
+    <link rel="stylesheet" href="addCard.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
@@ -24,10 +24,10 @@ $cardModel = new CardModel($db);
 
 <nav>
     <div class="nav-container">
-        <a href="#" class="logo">All Star Cards</a>
+        <a href="index.php" class="logo">All Star Cards</a>
         <div class="nav-links">
             <a href="index.php">HOME</a>
-            <a href="index.php">YOUR COLLECTION</a>
+            <a href="yourCollection.php">YOUR COLLECTION</a>
             <a href="addCard.php">ADD TO COLLECTION</a>
         </div>
         <div>
@@ -115,7 +115,10 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<footer>&#169 2024 Alex Livingston</footer>
+<footer>
+    <p>&#169 ALL STAR CARDS</p>
+    <p>PRIVACY | TERMS AND CONDITIONS</p>
+</footer>
 </body>
 
 

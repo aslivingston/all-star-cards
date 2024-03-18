@@ -199,3 +199,14 @@ p.cardValue {
     transition: all 0.3s;
     cursor: pointer;
 }
+
+footer {
+    display: flex;
+    color: #000;
+    background-color: #D9D9D9;
+    text-align: center;
+    padding: 20px 20px;
+    font-family: Avenir, sans-serif;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}

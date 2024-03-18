@@ -68,8 +68,8 @@
     <div class="nav-container">
         <a href="#" class="logo">All Star Cards</a>
         <div class="nav-links">
-            <a href="index.php">Home</a>
-            <a href="index.php">Your Card Collection</a>
+            <a href="yourCollection.php">Home</a>
+            <a href="yourCollection.php">Your Card Collection</a>
             <a href="addCard.php">Add To Your Collection</a>
         </div>
     </div>

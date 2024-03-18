@@ -1,6 +1,8 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body{
     background-color: #383838;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
 }
 
@@ -76,34 +78,45 @@ h1 {
     font-size: 3rem;
     max-width: 1500px;
     margin: 0 auto;
-    padding-left: 100px;
-    padding-top: 200px;
+    padding-top: 100px;
 }
 
-.submit {
-    padding: 100px;
+.cardContainer {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    font-family: Avenir, sans-serif;
+    color: #eeeeee;
 }
 
-.addTitle {
-    color: #fff;
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: "Bungee", sans-serif;
-    font-size: 1.5rem;
-    text-align: center;
+.editCardDetails {
+    flex: 1;
 }
 
-.addForm {
+.editImage {
+    flex: 1;
+    max-width: 100%;
+}
+
+.editForm {
     display: flex;
     flex-direction: column;
     width: 700px;
     background-color: #383838;
     color: #fff;
-    margin: 0 auto;
     border: 1px solid #fff;
     border-radius: 15px;
     padding: 50px;
+    margin: 30px 0;
+}
+
+.error {
+    color: #ff0000;
+    font-family: Avenir, sans-serif;
+}
+
+.submitTitle {
+    color: #eeeeee;
 }
 
 label {
@@ -139,9 +152,30 @@ label {
 }
 
 footer {
-    color: #fff;
+    display: flex;
+    color: #000;
+    background-color: #D9D9D9;
     text-align: center;
-    padding-bottom: 50px;
+    padding: 20px 50px;
+    font-family: Avenir, sans-serif;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    width: 100%;
 }
 
+@media only screen and (max-width: 1000px) {
+    .addTitle {
+        margin-top: 100px;
+    }
 
+    .addForm{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: x-large;
+        width: fit-content;
+        margin-top: 1rem;
+        color: #79705D;
+    }
+
+}
